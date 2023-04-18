@@ -1,4 +1,5 @@
 import 'package:airplane/shared/theme.dart';
+import 'package:airplane/ui/widgets/costume_button.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -51,29 +52,6 @@ class SignUpPage extends StatelessWidget {
         );
       }
 
-      Widget submitButton() {
-        return Container(
-          height: 55,
-          width: double.infinity,
-          margin: const EdgeInsets.only(top: 20),
-          child: TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-                backgroundColor: kPrimaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(defaultRadius),
-                )),
-            child: Text(
-              'Get Started',
-              style: whiteTextStyle.copyWith(
-                fontSize: 18,
-                fontWeight: medium,
-              ),
-            ),
-          ),
-        );
-      }
-
       return Container(
         margin: const EdgeInsets.only(top: 30),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -88,8 +66,23 @@ class SignUpPage extends StatelessWidget {
             inputTextField(label: 'Email', hint: 'Email', obscure: false),
             inputTextField(label: 'Password', hint: 'Password', obscure: true),
             inputTextField(label: 'Hobby', hint: 'Hobby', obscure: false),
-            submitButton(),
+            const CostumeButton(title: 'Get Started', route: '/main'),
           ],
+        ),
+      );
+    }
+
+    Widget tagButton() {
+      return Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.only(top: 50, bottom: 73),
+        child: Text(
+          'Terms and Conditions',
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: medium,
+            decoration: TextDecoration.underline,
+          ),
         ),
       );
     }
@@ -102,6 +95,7 @@ class SignUpPage extends StatelessWidget {
           children: [
             text(),
             inputSection(),
+            tagButton(),
           ],
         ),
       ),
