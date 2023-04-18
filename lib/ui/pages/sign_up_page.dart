@@ -21,37 +21,6 @@ class SignUpPage extends StatelessWidget {
     }
 
     Widget inputSection() {
-      Widget inputTextField({
-        required String label,
-        required String hint,
-        required bool obscure,
-      }) {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(label),
-              const SizedBox(height: 6.0),
-              TextField(
-                cursorColor: kBlackColor,
-                obscureText: obscure,
-                decoration: InputDecoration(
-                  hintText: hint,
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                    borderSide: BorderSide(color: kPrimaryColor),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      }
-
       return Container(
         margin: const EdgeInsets.only(top: 30),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -59,14 +28,18 @@ class SignUpPage extends StatelessWidget {
           color: kWhiteColor,
           borderRadius: BorderRadius.circular(defaultRadius),
         ),
-        child: Column(
+        child: const Column(
           children: [
-            inputTextField(
+            Costumetextfeld(
                 label: 'Full Name', hint: 'Your Full Name', obscure: false),
-            inputTextField(label: 'Email', hint: 'Email', obscure: false),
-            inputTextField(label: 'Password', hint: 'Password', obscure: true),
-            inputTextField(label: 'Hobby', hint: 'Hobby', obscure: false),
-            const CostumeButton(title: 'Get Started', route: '/main'),
+            Costumetextfeld(label: 'Email', hint: 'Email', obscure: false),
+            Costumetextfeld(label: 'Password', hint: 'Password', obscure: true),
+            Costumetextfeld(label: 'Hobby', hint: 'Hobby', obscure: false),
+            CostumeButton(
+              title: 'Get Started',
+              route: '/bonus',
+              width: 320,
+            ),
           ],
         ),
       );
@@ -98,6 +71,47 @@ class SignUpPage extends StatelessWidget {
             tagButton(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Costumetextfeld extends StatelessWidget {
+  const Costumetextfeld({
+    super.key,
+    required this.label,
+    required this.hint,
+    required this.obscure,
+  });
+
+  final String label;
+  final String hint;
+  final bool obscure;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label),
+          const SizedBox(height: 6.0),
+          TextField(
+            cursorColor: kBlackColor,
+            obscureText: obscure,
+            decoration: InputDecoration(
+              hintText: hint,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(defaultRadius),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(defaultRadius),
+                borderSide: BorderSide(color: kPrimaryColor),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -39,7 +39,8 @@ class GetStartedPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const CostumeButton(title: 'Get Started')
+                  const CostumeButton(title: 'Get Started ', route: '/sign-up'),
+                  const SizedBox(height: 50.0),
                 ],
               ),
             ),

@@ -112,7 +112,7 @@ class BonusPage extends StatelessWidget {
             bonusCard(),
             title(),
             subTitle(),
-            const CostumeButton(title: 'Start Fly Now', route: '/bonus')
+            const CostumeButton(title: 'Start Fly Now', route: '/main')
           ],
         ),
       ),

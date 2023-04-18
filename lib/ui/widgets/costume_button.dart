@@ -7,15 +7,18 @@ class CostumeButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.route,
+    this.height = 55,
+    this.width = 220,
   });
 
   final String title, route;
+  final double height, width;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
-      width: double.infinity,
+      height: height,
+      width: width,
       margin: const EdgeInsets.only(top: 20),
       child: TextButton(
         onPressed: () => Navigator.pushNamed(context, route),
