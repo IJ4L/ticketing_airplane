@@ -25,3 +25,6 @@ FontWeight semiBold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
 FontWeight extraBold = FontWeight.w800;
 FontWeight black = FontWeight.w900;
+
+double defaultMargin = 24;
+double defaultRadius = 17;
