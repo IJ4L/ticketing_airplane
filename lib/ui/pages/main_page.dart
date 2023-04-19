@@ -1,6 +1,9 @@
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/widgets/costume_button_nav.dart';
+import 'package:airplane/ui/widgets/destination_tile.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/destination_card.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -31,101 +34,6 @@ class MainPage extends StatelessWidget {
               CostumeButton(img: 'assets/icons/setting.png', isSelected: false),
             ],
           ),
-        ),
-      );
-    }
-
-    Widget location() {
-      List<String> place = [
-        'Lake Ciliwung',
-        'White Houses',
-        'Hill Heyo',
-        'Menarra',
-        'Payung Teduh',
-      ];
-
-      List<String> country = [
-        'Tangerang',
-        'Spain',
-        'Monaco',
-        'Japan',
-        'Singapore',
-      ];
-      return Container(
-        height: 323,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: kWhiteColor,
-          borderRadius: BorderRadius.circular(defaultRadius),
-        ),
-        margin: const EdgeInsets.only(top: 30),
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => Container(
-            margin: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Stack(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(defaultRadius),
-                      child: Image.asset(
-                        "assets/images/img${index + 1}.png",
-                        width: 180.0,
-                        height: 220.0,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    Positioned(
-                      right: 0,
-                      child: Container(
-                        height: 35,
-                        width: 65,
-                        decoration: BoxDecoration(
-                          color: kWhiteColor,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(defaultRadius),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.star,
-                              color: kOrangeColor,
-                            ),
-                            const SizedBox(width: 4.0),
-                            Text(
-                              '4.7',
-                              style: blackTextStyle.copyWith(
-                                fontWeight: medium,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                const SizedBox(height: 16.0),
-                Text(
-                  place[index],
-                  style: blackTextStyle.copyWith(
-                    fontSize: 18,
-                    fontWeight: medium,
-                  ),
-                ),
-                const SizedBox(height: 8.0),
-                Text(
-                  country[index],
-                  style: greyTextStyle.copyWith(fontWeight: light),
-                )
-              ],
-            ),
-          ),
-          separatorBuilder: (_, index) => const SizedBox(width: 20),
-          itemCount: 5,
         ),
       );
     }
@@ -167,7 +75,8 @@ class MainPage extends StatelessWidget {
                   fontWeight: light,
                 ),
               ),
-              location(),
+              const Destinationcard(),
+              const DestinationTile(),
             ],
           ),
         ),
@@ -178,8 +87,8 @@ class MainPage extends StatelessWidget {
       backgroundColor: kBackgroundColor,
       body: Stack(
         children: [
+          SingleChildScrollView(child: header()),
           costumeBottomNavigation(),
-          header(),
         ],
       ),
     );
