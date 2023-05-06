@@ -191,7 +191,11 @@ class DetailPage extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  const CostumeButton(title: 'BOOK NOW', route: '', width: 170),
+                  const CostumeButton(
+                    title: 'BOOK NOW',
+                    route: '/choose-seat',
+                    width: 170,
+                  ),
                 ],
               ),
               const SizedBox(height: 30.0),
