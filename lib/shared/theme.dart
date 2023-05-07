@@ -11,6 +11,8 @@ Color kRedColor = const Color(0xffEB70A5);
 Color kBackgroundColor = const Color(0xffFAFAFA);
 Color kInacktiveColor = const Color(0xffDBD7EC);
 Color kTransparantColor = Colors.transparent;
+Color kAvailableColor = const Color(0xffE0D9FF);
+Color kUnAvailableColor = const Color(0xffEBECF1);
 
 TextStyle blackTextStyle = GoogleFonts.poppins(color: kBlackColor);
 TextStyle whiteTextStyle = GoogleFonts.poppins(color: kWhiteColor);
