@@ -284,7 +284,10 @@ class ChooseSeatPage extends StatelessWidget {
     }
 
     Widget checkOutButton() {
-      return const CostumeButton(title: 'Continue to Checkout', route: '');
+      return const CostumeButton(
+        title: 'Continue to Checkout',
+        route: '/checkout',
+      );
     }
 
     return Scaffold(
