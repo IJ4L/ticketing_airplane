@@ -1,5 +1,6 @@
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/widgets/booking_detail.dart';
+import 'package:airplane/ui/widgets/costume_button.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutPage extends StatelessWidget {
@@ -231,7 +232,48 @@ class CheckoutPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'IDR 80.400.000',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 18,
+                            fontWeight: medium,
+                          ),
+                        ),
+                        Text(
+                          'Current Balance',
+                          style: greyTextStyle.copyWith(fontWeight: light),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
+    Widget playButton() {
+      return Container(
+        margin: const EdgeInsets.only(top: 30),
+        child: Column(
+          children: [
+            const CostumeButton(
+              title: 'Play Now',
+              route: '',
+              width: double.infinity,
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              child: Text(
+                'Terms and Conditions',
+                style: greyTextStyle.copyWith(fontSize: 16, fontWeight: light),
               ),
             )
           ],
@@ -246,6 +288,7 @@ class CheckoutPage extends StatelessWidget {
           route(),
           bookingDetails(),
           paymentDetails(),
+          playButton(),
         ],
       ),
     );
