@@ -266,7 +266,7 @@ class CheckoutPage extends StatelessWidget {
           children: [
             const CostumeButton(
               title: 'Play Now',
-              route: '',
+              route: '/succses-checkout',
               width: double.infinity,
             ),
             Container(
