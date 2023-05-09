@@ -1,1 +1,1 @@
-![alt text](link/gambar.jpg)
+![alt text](assets/bannerAirplane.jpg)
